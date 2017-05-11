@@ -1,0 +1,13 @@
+
+package: text-1.2.2.1
+os: windows
+arch: x86_64
+compiler: ghc-8.0.1
+client: cabal-install-1.24.0.0
+flags: -integer-simple -developer
+dependencies: array-0.5.1.1 base-4.9.0.0 binary-0.8.3.0
+              bytestring-0.10.8.1 deepseq-1.4.2.0 ghc-prim-0.5.0.0
+              integer-gmp-1.0.0.1
+install-outcome: InstallOk
+docs-outcome: NotTried
+tests-outcome: NotTried

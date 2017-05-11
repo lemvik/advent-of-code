@@ -1,0 +1,180 @@
+	Fri Dec 30 17:10 2016 Time and Allocation Profiling Report  (Final)
+
+	   Day11.exe +RTS -p -RTS 10
+
+	total time  =        0.64 secs   (644 ticks @ 1000 us, 1 processor)
+	total alloc = 772,505,808 bytes  (excludes profiling overheads)
+
+COST CENTRE                                  MODULE         %time %alloc
+
+compare                                      Main            22.5   31.3
+toAscList                                    Data.Set.Base   15.5   36.0
+compare                                      Main            13.7    0.0
+range                                        Main             8.2   17.7
+compare                                      Main             4.8    0.0
+takeFromFloor.f                              Main             4.0    1.2
+inRange                                      Main             3.3    0.0
+traverseBreadthFirst.generateSubstates.cands Main             3.0    0.1
+possibleStates.toState                       Main             3.0    1.8
+traverseBreadthFirst.generateSubstates       Main             2.3    0.9
+addToFloor.f                                 Main             2.0    1.6
+compare                                      Main             1.9    0.0
+unsafeIndex                                  Main             1.7    0.0
+link                                         Data.Set.Base    1.6    1.3
+compare                                      Main             1.4    0.0
+floorValid                                   Main             1.1    0.5
+combine                                      Main             0.9    1.3
+
+
+                                                                                                individual      inherited
+COST CENTRE                                         MODULE                   no.     entries  %time %alloc   %time %alloc
+
+MAIN                                                MAIN                      55          0    0.2    0.0   100.0  100.0
+ main                                               Main                     111          0    0.0    0.0    99.8  100.0
+  traverseBreadthFirst                              Main                     112          1    0.0    0.0    99.8  100.0
+   traverseBreadthFirst.go                          Main                     124       7914    0.8    0.2    99.8  100.0
+    traverseBreadthFirst.go.seen'                   Main                     212       7912    0.0    0.0     0.0    0.0
+    viewl                                           Data.Sequence.Base       211       7913    0.0    0.2     0.0    0.2
+    traverseBreadthFirst.go.acc'                    Main                     208       7913    0.0    0.0     0.5    0.2
+     ><                                             Data.Sequence.Base       209       7913    0.5    0.2     0.5    0.2
+    traverseBreadthFirst.go.next                    Main                     131       7913    0.0    0.0     0.0    0.0
+    traverseBreadthFirst.go.(...)                   Main                     129       7913    0.0    0.0    98.3   99.4
+     traverseBreadthFirst.generateSubstates         Main                     130       7913    2.3    0.9    98.3   99.4
+      link                                          Data.Set.Base            243      93693    0.5    0.6     0.5    0.6
+      compare                                       Main                     222     134473    5.9    7.7    18.0   20.7
+       compare                                      Main                     227     167878    4.0    0.0     9.3    8.8
+        compare                                     Main                     246     200126    0.3    0.0     0.9    0.0
+         compare                                    Main                     247     200126    0.6    0.0     0.6    0.0
+        compare                                     Main                     229     352316    0.0    0.0     0.5    0.0
+         compare                                    Main                     230     352316    0.5    0.0     0.5    0.0
+        toAscList                                   Data.Set.Base            228          0    3.9    8.8     3.9    8.8
+       inRange                                      Main                     226     335756    0.6    0.0     0.6    0.0
+       range                                        Main                     225     227952    1.7    4.3     1.7    4.3
+       unsafeIndex                                  Main                     224     335756    0.2    0.0     0.2    0.0
+       compare                                      Main                     223     302351    0.3    0.0     0.3    0.0
+      >=                                            Main                     213       4431    0.5    0.5     1.1    1.1
+       compare                                      Main                     218       7217    0.3    0.0     0.5    0.4
+        compare                                     Main                     244       9075    0.0    0.0     0.0    0.0
+         compare                                    Main                     245       9075    0.0    0.0     0.0    0.0
+        compare                                     Main                     220      14504    0.0    0.0     0.0    0.0
+         compare                                    Main                     221      14504    0.0    0.0     0.0    0.0
+        toAscList                                   Data.Set.Base            219          0    0.2    0.4     0.2    0.4
+       unsafeIndex                                  Main                     217      14434    0.0    0.0     0.0    0.0
+       inRange                                      Main                     216      14434    0.0    0.0     0.0    0.0
+       range                                        Main                     215       7940    0.2    0.2     0.2    0.2
+       compare                                      Main                     214      11648    0.0    0.0     0.0    0.0
+      traverseBreadthFirst.nextInd                  Main                     205      12183    0.0    0.0     0.0    0.0
+      traverseBreadthFirst.generateSubstates.cands  Main                     134       7913    3.0    0.1    76.4   76.1
+       compare                                      Main                     168     404628   16.6   23.6    53.0   63.4
+        compare                                     Main                     234     522058    9.3    0.0    25.0   26.6
+         compare                                    Main                     238     618581    1.4    0.0     3.0    0.0
+          compare                                   Main                     239     618581    1.6    0.0     1.6    0.0
+         compare                                    Main                     236    1071122    0.3    0.0     1.4    0.0
+          compare                                   Main                     237    1071122    1.1    0.0     1.1    0.0
+         toAscList                                  Data.Set.Base            235          0   11.3   26.6    11.3   26.6
+        inRange                                     Main                     233    1044116    2.5    0.0     2.5    0.0
+        range                                       Main                     232     662318    6.4   13.3     6.4   13.3
+        unsafeIndex                                 Main                     231    1044116    1.4    0.0     1.4    0.0
+        compare                                     Main                     169     926686    1.1    0.0     1.1    0.0
+       possibleStates                               Main                     135       7913    0.2    0.3    20.5   12.6
+        possibleStates.curFloor                     Main                     141       7913    0.0    0.0     0.0    0.0
+         unsafeIndex                                Main                     143       7913    0.0    0.0     0.0    0.0
+         inRange                                    Main                     142       7913    0.0    0.0     0.0    0.0
+        possibleStates.payloads                     Main                     140       7913    0.0    0.0     2.6    2.0
+         possiblePayload                            Main                     144       7913    0.8    0.5     2.6    2.0
+          possiblePayload.chipgen                   Main                     198       7913    0.0    0.1     0.2    0.3
+           possiblePayload.chipgen.\                Main                     202       3781    0.0    0.0     0.0    0.0
+           combine                                  Main                     200       7913    0.2    0.1     0.2    0.1
+            combine.\                               Main                     201       3781    0.0    0.0     0.0    0.0
+           toAscList                                Data.Set.Base            199          0    0.0    0.1     0.0    0.1
+          possiblePayload.twogen                    Main                     188       7913    0.2    0.2     0.3    0.5
+           possiblePayload.twogen.\                 Main                     191      12196    0.0    0.0     0.0    0.0
+           pairs                                    Main                     190      14640    0.2    0.2     0.2    0.2
+           toAscList                                Data.Set.Base            189          0    0.0    0.1     0.0    0.1
+          possiblePayload.twochip                   Main                     180       7913    0.3    0.1     1.1    0.4
+           possiblePayload.twochip.\                Main                     184       9556    0.0    0.0     0.0    0.0
+           pairs                                    Main                     183      14480    0.6    0.2     0.6    0.2
+           toAscList                                Data.Set.Base            182          0    0.2    0.1     0.2    0.1
+          possiblePayload.onegen                    Main                     171       7913    0.2    0.2     0.2    0.2
+           possiblePayload.onegen.\                 Main                     172      11204    0.0    0.0     0.0    0.0
+          possiblePayload.onechip                   Main                     145       7913    0.2    0.2     0.2    0.2
+           possiblePayload.onechip.\                Main                     147      13784    0.0    0.0     0.0    0.0
+        possibleStates.states                       Main                     138       7913    0.6    0.9    17.7   10.2
+         possibleStates.toState                     Main                     148      77999    3.0    1.8    16.3    8.1
+          unsafeIndex                               Main                     207      63864    0.0    0.0     0.0    0.0
+          inRange                                   Main                     206      63864    0.2    0.0     0.2    0.0
+          addToFloor                                Main                     165      57413    0.2    0.6     5.3    2.7
+           floorValid                               Main                     167      57413    0.9    0.3     2.3    0.3
+            hasGenerator                            Main                     176     100706    0.6    0.0     1.4    0.0
+             ==                                     Main                     177     222892    0.5    0.0     0.8    0.0
+              ==                                    Main                     178     222892    0.3    0.0     0.3    0.0
+            requiredGenerator                       Main                     175     100706    0.0    0.0     0.0    0.0
+           addToFloor.f                             Main                     166      57413    2.0    1.6     2.8    1.8
+            link                                    Data.Set.Base            242      23377    0.3    0.2     0.3    0.2
+            >=                                      Main                     240      15541    0.0    0.0     0.0    0.0
+             >=                                     Main                     241      15541    0.0    0.0     0.0    0.0
+            compare                                 Main                     203      83868    0.0    0.0     0.3    0.0
+             compare                                Main                     204      83868    0.3    0.0     0.3    0.0
+            compare                                 Main                     196      25782    0.0    0.0     0.2    0.0
+             compare                                Main                     197      25782    0.2    0.0     0.2    0.0
+            >=                                      Main                     194       5316    0.0    0.0     0.0    0.0
+             >=                                     Main                     195       5316    0.0    0.0     0.0    0.0
+          possibleStates.toState.curFloor'          Main                     162      57413    0.6    0.0     0.8    0.0
+           unsafeIndex                              Main                     164      57413    0.2    0.0     0.2    0.0
+           inRange                                  Main                     163      57413    0.0    0.0     0.0    0.0
+          takeFromFloor                             Main                     149      77999    0.3    0.9     7.1    3.5
+           floorValid                               Main                     151      77999    0.2    0.3     0.6    0.3
+            hasGenerator                            Main                     159      64068    0.0    0.0     0.5    0.0
+             ==                                     Main                     160     133403    0.5    0.0     0.5    0.0
+              ==                                    Main                     161     133403    0.0    0.0     0.0    0.0
+            requiredGenerator                       Main                     158      64068    0.0    0.0     0.0    0.0
+           takeFromFloor.f                          Main                     150      77999    4.0    1.2     6.2    2.3
+            >=                                      Main                     192      17357    0.0    0.0     0.2    0.0
+             >=                                     Main                     193      17357    0.2    0.0     0.2    0.0
+            >=                                      Main                     185      10025    0.0    0.0     0.0    0.0
+             >=                                     Main                     186      10025    0.0    0.0     0.0    0.0
+            compare                                 Main                     173     114373    0.2    0.0     0.6    0.0
+             compare                                Main                     174     114373    0.5    0.0     0.5    0.0
+            merge                                   Data.Set.Base            157      74165    0.2    0.5     0.5    0.6
+             deleteFindMax                          Data.Set.Base            179       6701    0.0    0.1     0.0    0.1
+             deleteFindMin                          Data.Set.Base            170      14693    0.3    0.1     0.3    0.1
+            link                                    Data.Set.Base            156      59397    0.8    0.5     0.8    0.5
+            compare                                 Main                     154      71991    0.0    0.0     0.2    0.0
+             compare                                Main                     155      71991    0.2    0.0     0.2    0.0
+         combine                                    Main                     139      20365    0.8    1.2     0.8    1.2
+          combine.\                                 Main                     146      77999    0.0    0.0     0.0    0.0
+        possibleStates.neighbours                   Main                     136       7913    0.0    0.0     0.0    0.0
+         neighbourFloors                            Main                     137       7913    0.0    0.0     0.0    0.0
+      traverseBreadthFirst.generateSubstates.cands' Main                     132       7913    0.0    0.0     0.0    0.0
+    requiredState                                   Main                     125      20097    0.3    0.0     0.3    0.0
+     unsafeIndex                                    Main                     128      20097    0.0    0.0     0.0    0.0
+     inRange                                        Main                     127      20097    0.0    0.0     0.0    0.0
+     floorEmpty                                     Main                     126      20097    0.0    0.0     0.0    0.0
+   requiredState                                    Main                     116          1    0.0    0.0     0.0    0.0
+    unsafeIndex                                     Main                     119          1    0.0    0.0     0.0    0.0
+    inRange                                         Main                     118          1    0.0    0.0     0.0    0.0
+    floorEmpty                                      Main                     117          1    0.0    0.0     0.0    0.0
+ CAF                                                GHC.IO.Encoding.CodePage  98          0    0.0    0.0     0.0    0.0
+ CAF                                                System.Environment        87          0    0.0    0.0     0.0    0.0
+ CAF                                                GHC.IO.Handle.Text        83          0    0.0    0.0     0.0    0.0
+ CAF                                                GHC.IO.Encoding           82          0    0.0    0.0     0.0    0.0
+ CAF                                                Text.Read.Lex             77          0    0.0    0.0     0.0    0.0
+ CAF                                                GHC.Show                  76          0    0.0    0.0     0.0    0.0
+ CAF                                                GHC.IO.Handle.FD          73          0    0.0    0.0     0.0    0.0
+ CAF                                                Data.Sequence.Base        65          0    0.0    0.0     0.0    0.0
+  empty                                             Data.Sequence.Base       210          1    0.0    0.0     0.0    0.0
+  fromList                                          Data.Sequence.Base       133          1    0.0    0.0     0.0    0.0
+ CAF                                                Data.Set.Base             64          0    0.0    0.0     0.0    0.0
+  toAscList                                         Data.Set.Base            181          1    0.0    0.0     0.0    0.0
+ CAF                                                Main                      62          0    0.0    0.0     0.0    0.0
+  merge                                             Data.Set.Base            187          2    0.0    0.0     0.0    0.0
+  initialState                                      Main                     113          1    0.0    0.0     0.0    0.0
+   mkFloor                                          Main                     120          4    0.0    0.0     0.0    0.0
+    >=                                              Main                     152          5    0.0    0.0     0.0    0.0
+     >=                                             Main                     153          5    0.0    0.0     0.0    0.0
+    link                                            Data.Set.Base            123          3    0.0    0.0     0.0    0.0
+    >=                                              Main                     121          4    0.0    0.0     0.0    0.0
+     >=                                             Main                     122          4    0.0    0.0     0.0    0.0
+   unsafeIndex                                      Main                     115          1    0.0    0.0     0.0    0.0
+   inRange                                          Main                     114          1    0.0    0.0     0.0    0.0
+  main                                              Main                     110          1    0.0    0.0     0.0    0.0
